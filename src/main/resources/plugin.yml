@@ -1,0 +1,11 @@
+name: LanthyrChatnSigns
+version: ${project.version}
+main: lanthyrchatnsigns.lanthyrchatnsigns.LanthyrChatnSigns
+authors: [Laleem]
+description: Editable signs and Chat stuff
+website: https://lanthyrrp.enjin.com/home
+commands:
+  editsign:
+    description: some stuff
+  chatcolor:
+    description: some stuff
