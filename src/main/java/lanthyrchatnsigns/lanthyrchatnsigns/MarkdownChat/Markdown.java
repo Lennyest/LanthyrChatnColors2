@@ -1,55 +1,63 @@
 package lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat;
 
+import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Markdown implements Listener {
 
-    private static final Pattern astrikPattern = Pattern.compile("(.*?)(\\*+ | _)(.*?)(\\*+ | _)(.*?)", Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
+    private static final Pattern astrikPattern = Pattern.compile("(\\*+|_)(.*?)(\\*+|_)", Pattern.MULTILINE | Pattern.CASE_INSENSITIVE);
+    private static final Pattern prefixPattern = Pattern.compile("");
 
-    public static String methodUsingPattern(String testString) {
+    public static BaseComponent[] methodUsingPattern(String testString) {
 
         Matcher matcher = astrikPattern.matcher(testString);
         ComponentBuilder builder = new ComponentBuilder("");
+        int lastEnd = 0;
         while (matcher.find()) {
-            String head = matcher.group(1);
-            int numberOfAstricksInBeginning = matcher.group(2).length();
-            String theTestWIthAstricks = matcher.group(3);
-            int numberOfAstricksInEnd = matcher.group(4).length();
-            String tail = matcher.group(5);
+            int numberOfAstricksInBeginning = matcher.group(1).length();
+            String theTestWIthAstricks = matcher.group(2);
+            int numberOfAstricksInEnd = matcher.group(3).length();
 
+            builder.append(testString.substring(lastEnd, matcher.start()), ComponentBuilder.FormatRetention.NONE);
+            builder.append(theTestWIthAstricks, ComponentBuilder.FormatRetention.NONE);
             if (matcher.group(1).charAt(0) == '*' && numberOfAstricksInBeginning == numberOfAstricksInEnd) {
-                builder.append(head).append(theTestWIthAstricks);
 
                 switch (numberOfAstricksInBeginning) {
                     case 1:
                         builder.italic(true);
+                        break;
                     case 2:
                         builder.bold(true);
+                        break;
+                    case 3:
+                        builder.bold(true);
+                        builder.italic(true);
                 }
             } else if (matcher.group(1).charAt(0) == '_') {
                 builder.underlined(true);
             }
-            builder.append(tail);
+            lastEnd = matcher.end();
+
         }
-        if (builder.create().length == 1) return testString;
-        String message = Arrays.stream(builder.create())
-                .map(c -> c.toLegacyText())
-                .collect(Collectors.joining());
-        return message;
+        builder.append(testString.substring(lastEnd), ComponentBuilder.FormatRetention.NONE);
+        if (builder.create().length == 1) return new TextComponent[]{new TextComponent(testString)};
+        return builder.create();
     }
 
     @EventHandler
     public static void boldMarkDown(AsyncPlayerChatEvent event) {
-            event.setMessage(methodUsingPattern(event.getMessage()));
+        for (Player player : event.getRecipients()) {
+            player.spigot().sendMessage(ChatMessageType.CHAT, methodUsingPattern(event.getMessage()));
+        }
+        event.setCancelled(true);
     }
 }
