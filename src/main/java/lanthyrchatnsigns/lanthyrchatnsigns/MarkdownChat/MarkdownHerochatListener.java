@@ -34,7 +34,9 @@ public class MarkdownHerochatListener implements Listener {
                             .replaceAll("\\{prefix}", group != null ?
                                     Herochat.getChatService().getGroupPrefix(event.getSender().getPlayer().getWorld(), group) : "")
                             .replaceAll("\\{suffix}", group != null ?
-                                    Herochat.getChatService().getGroupPrefix(event.getSender().getPlayer().getWorld(), group) : "");
+                                    Herochat.getChatService().getGroupPrefix(event.getSender().getPlayer().getWorld(), group) : "")
+                            .replaceAll("\\{convopartner}", event.getSender().getName())
+                            .replaceAll("\\{convoaddress}", "PM:");
 
                     string = ChatColor.translateAlternateColorCodes('&', string);
                     uffixes[i] = string;

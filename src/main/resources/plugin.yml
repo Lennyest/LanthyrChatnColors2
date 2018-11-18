@@ -2,7 +2,7 @@ name: LanthyrChatnSigns
 version: ${project.version}
 main: lanthyrchatnsigns.lanthyrchatnsigns.LanthyrChatnSigns
 softdepend: [Herochat, Vault]
-authors: [Laleem]
+authors: [Laleem, GreatThane]
 description: Editable signs and Chat stuff
 website: https://lanthyrrp.enjin.com/home
 commands:

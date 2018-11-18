@@ -51,8 +51,8 @@
       <url>https://oss.sonatype.org/content/groups/public/</url>
     </repository>
     <repository>
-      <id>dmulloy2-repo</id>
-      <url>http://repo.dmulloy2.net/nexus/repository/public/</url>
+      <id>vault-repo</id>
+      <url>http://nexus.hc.to/content/repositories/pub_releases</url>
     </repository>
   </repositories>
   <dependencies>
@@ -63,30 +63,23 @@
       <scope>provided</scope>
       <exclusions>
         <exclusion>
-          <artifactId>commons-lang</artifactId>
-          <groupId>commons-lang</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>json-simple</artifactId>
-          <groupId>com.googlecode.json-simple</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>guava</artifactId>
-          <groupId>com.google.guava</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>gson</artifactId>
-          <groupId>com.google.code.gson</groupId>
-        </exclusion>
-        <exclusion>
-          <artifactId>snakeyaml</artifactId>
-          <groupId>org.yaml</groupId>
-        </exclusion>
-        <exclusion>
           <artifactId>bungeecord-chat</artifactId>
           <groupId>net.md-5</groupId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>net.milkbowl.vault</groupId>
+      <artifactId>VaultAPI</artifactId>
+      <version>1.7</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.dthielke.herochat</groupId>
+      <artifactId>HeroChat</artifactId>
+      <version>6.0.1-SNAPSHOT</version>
+      <scope>system</scope>
+      <systemPath>F:/Development/Server/plugins/Herochat.jar</systemPath>
     </dependency>
   </dependencies>
   <properties>

@@ -55,6 +55,7 @@
     </build>
 
     <repositories>
+
         <repository>
             <id>spigotmc-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/groups/public/</url>
@@ -70,23 +71,17 @@
     </repositories>
 
     <dependencies>
+
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.dthielke.herochat</groupId>
-            <artifactId>HeroChat</artifactId>
-            <version>6.0.1-SNAPSHOT</version>
-            <scope>system</scope>
-            <systemPath>/home/ethan/Desktop/server/plugins/Herochat.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.bukkit</groupId>
             <artifactId>bukkit</artifactId>
-            <version>1.13.2-R0.1-SNAPSHOT</version>
+            <version>1.12.2-R0.1-SNAPSHOT</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -94,6 +89,13 @@
             <artifactId>VaultAPI</artifactId>
             <version>1.7</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.dthielke.herochat</groupId>
+            <artifactId>HeroChat</artifactId>
+            <version>6.0.1-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>F:/Development/Server/plugins/Herochat.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

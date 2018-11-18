@@ -39,7 +39,7 @@ public class SignsCommand implements CommandExecutor {
                                     }
 
                                     tmpSet.add(Material.AIR);
-                                    if (player.getTargetBlock(tmpSet, 100).getType() == (Material.SIGN_POST)) {
+                                    if (player.getTargetBlock(tmpSet, 100).getType() == (Material.SIGN)) {
 
                                         Block b = player.getTargetBlock(tmpSet, 8);
                                         Sign sign = (Sign) b.getLocation().getBlock().getState();

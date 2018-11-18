@@ -1,23 +1,12 @@
 package lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat;
 
-import com.dthielke.herochat.ChannelChatEvent;
-import com.dthielke.herochat.Chatter;
-import com.dthielke.herochat.Herochat;
-import com.dthielke.herochat.MessageHandler;
-import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.BaseComponent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.TextComponent;
-import org.bukkit.ChatColor;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class Markdown implements Listener {
 
@@ -40,7 +29,7 @@ public class Markdown implements Listener {
 
                 switch (numberOfAsterisksInBeginning) {
                     case 1:
-                        builder.italic(true);
+                        builder.bold(true);
                         break;
                     case 2:
                         builder.bold(true);
@@ -50,7 +39,7 @@ public class Markdown implements Listener {
                         builder.italic(true);
                 }
             } else if (matcher.group(1).charAt(0) == '_') {
-                builder.underlined(true);
+                builder.italic(true);
             }
             lastEnd = matcher.end();
         }

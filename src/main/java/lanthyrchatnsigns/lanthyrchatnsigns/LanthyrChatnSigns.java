@@ -3,9 +3,7 @@ package lanthyrchatnsigns.lanthyrchatnsigns;
 import lanthyrchatnsigns.lanthyrchatnsigns.ChatSecurity.VersionTabCompleteCancel;
 import lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat.Markdown;
 import lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat.MarkdownHerochatListener;
-import lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat.MarkdownQSelection;
 import lanthyrchatnsigns.lanthyrchatnsigns.MarkdownChat.MarkdownVanillaListener;
-import lanthyrchatnsigns.lanthyrchatnsigns.Signs.Signs;
 import lanthyrchatnsigns.lanthyrchatnsigns.Signs.SignsCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,10 +15,8 @@ public final class LanthyrChatnSigns extends JavaPlugin {
         this.getServer().getConsoleSender().sendMessage(ChatColor.RED + " <<< LanthyrChatnSigns has been enabled! >>>");
 
         this.getCommand("editsign").setExecutor(new SignsCommand());
-        this.getCommand("chatcolor").setExecutor(new MarkdownQSelection());
 
         this.getServer().getPluginManager().registerEvents(new Markdown(), this);
-        this.getServer().getPluginManager().registerEvents(new Signs(), this);
         this.getServer().getPluginManager().registerEvents(new VersionTabCompleteCancel(), this);
         if (this.getServer().getPluginManager().isPluginEnabled("Herochat")) {
             this.getServer().getPluginManager().registerEvents(new MarkdownHerochatListener(), this);
