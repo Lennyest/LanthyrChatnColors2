@@ -68,10 +68,14 @@
             <id>vault-repo</id>
             <url>http://nexus.hc.to/content/repositories/pub_releases</url>
         </repository>
+        <repository>
+            <id>Characters</id>
+            <url>http://maven.tripixelstudios.com/
+            </url>
+        </repository>
     </repositories>
 
     <dependencies>
-
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -95,7 +99,7 @@
             <artifactId>HeroChat</artifactId>
             <version>6.0.1-SNAPSHOT</version>
             <scope>system</scope>
-            <systemPath>F:/Development/Server/plugins/Herochat.jar</systemPath>
+            <systemPath>F:/Development/Server/-plugins/Herochat.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

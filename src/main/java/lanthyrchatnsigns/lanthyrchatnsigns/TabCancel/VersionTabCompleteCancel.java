@@ -1,4 +1,4 @@
-package lanthyrchatnsigns.lanthyrchatnsigns.ChatSecurity;
+package lanthyrchatnsigns.lanthyrchatnsigns.TabCancel;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.EventHandler;
@@ -11,7 +11,7 @@ public class VersionTabCompleteCancel implements Listener {
     public void tabCompletePlugins(TabCompleteEvent event) {
 
         if (!event.getBuffer().startsWith("/")) {
-            // No command, not interested.
+            return;
         }
 
         CommandSender sender = event.getSender();

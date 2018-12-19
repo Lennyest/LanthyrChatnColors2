@@ -35,7 +35,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.dthielke.herochat:HeroChat:6.0.1-SNAPSHOT">
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../../Server/plugins/Herochat.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../../Server/-plugins/Herochat.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
