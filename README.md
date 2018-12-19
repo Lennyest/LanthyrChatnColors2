@@ -1,5 +1,5 @@
 # LanthyrChatnColors2
-An edited verrsion of my other plugin, using md5's source code to work with herochat.
+An edited version of my other plugin, using md5's source code to work with herochat.
 
 This is a plugin created to work with herochat. Enter the markdown class in the Markdown package and you'll be able to add more channels
 I'll add a config in the near future.
